@@ -1,18 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { DEFAULT_PROPS } from '../../utils/constants';
 
 import { Content } from './style';
+import ContentEmpty from '../ContentEmpty';
 
-const propTypes = {};
+const propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
-const defaultProps = {};
+const defaultProps = {
+  children: DEFAULT_PROPS.contentEmpty,
+};
 
-export default function ContentSection({ title, children, bottomBorder }) {
+export default function ContentSection({ title, children, bottomBorder, padded }) {
   const sectionTitle = title ? (<h5>{title}</h5>) : null;
   const hr = bottomBorder? (<hr />) : null;
 
   return (
-    <Content>
+    <Content padded={padded}>
       {sectionTitle}
       {children}
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'reactstrap';
-import { MOVIE } from '../../utils/constants';
+import { MOVIE, DEFAULT_PROPS } from '../../utils/constants';
 
 import { GlobalStyle } from '../../styles';
 import HeadTags from '../HeadTags';
@@ -12,14 +12,14 @@ const propTypes = {
 };
 
 const defaultProps = {
-  children: <NotFound />,
+  children: DEFAULT_PROPS.notFound,
 };
 
 export default function Layout({ children }) {
   return (
     <React.Fragment>
       <GlobalStyle />
-      <Container>
+      <Container style={{ backgroundColor: '#f3f7fe' }}>
         <Row>
           <Col>
             <HeadTags title={MOVIE.title} />

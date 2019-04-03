@@ -5,12 +5,22 @@ import { MOVIE } from '../utils/constants';
 import Layout from '../components/Layout';
 import ContentSection from '../components/ContentSection';
 import TitleSection from '../components/TitleSection';
+import SynopsisSection from '../components/SynopsisSection';
+import RelatedSection from '../components/RelatedSection';
 
 export default function Index(props) {
   return (
     <Layout>
-      <ContentSection bottomBorder>
+      <ContentSection bottomBorder padded>
         <TitleSection {...MOVIE} />
+      </ContentSection>
+
+      <ContentSection title="Synopsis" padded>
+        <SynopsisSection {...MOVIE} />
+      </ContentSection>
+
+      <ContentSection title="Related videos" padded>
+        <RelatedSection {...MOVIE} />
       </ContentSection>
     </Layout>
   );

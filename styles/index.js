@@ -18,4 +18,8 @@ export const GlobalStyle = createGlobalStyle`
   .no-padding {
     padding: 0px;
   }
+
+  .italic {
+    font-style: italic;
+  }
 `;

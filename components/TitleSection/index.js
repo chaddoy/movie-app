@@ -13,7 +13,7 @@ export default function TitleSection({ avatar, title }) {
   return (
     <TitleContainer>
       <Row>
-        <Col xs="12" sm="12" md="9">
+        <Col xs="12" sm="12" md="9" lg="10" className="no-padding">
           <div className="display-table">
             <div className="display-table-cell">
               <Row>
@@ -32,16 +32,16 @@ export default function TitleSection({ avatar, title }) {
           </div>
         </Col>
 
-        <Col xs="12" sm="12" md="3">
+        <Col xs="12" sm="12" md="3" lg="2">
           <Row className="btn-row">
             <Col xs="4" sm="4" md="12" className="btn-col">
-              <Button outline block color="primary">Play video</Button>
+              <Button className="action-btn" outline block color="primary">Play video</Button>
             </Col>
             <Col xs="4" sm="4" md="12" className="btn-col">
-              <Button outline block color="primary">Watch later</Button>
+              <Button className="action-btn" outline block color="primary">Watch later</Button>
             </Col>
             <Col xs="4" sm="4" md="12" className="btn-col">
-              <Button outline block color="primary">Share</Button>
+              <Button className="action-btn" outline block color="primary">Share</Button>
             </Col>
           </Row>
         </Col>

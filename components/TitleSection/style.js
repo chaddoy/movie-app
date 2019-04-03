@@ -10,6 +10,11 @@ export const TitleContainer = styled(Container)`
 
     .btn-col {
       padding: 2px;
+
+      .action-btn {
+        font-weight: 500;
+        font-size: 12px;
+      }
     }
   }
 
@@ -48,5 +53,18 @@ export const Title = styled.div`
     height: 32px;
     line-height: 0;
     padding-top: 0px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #7ea6f6;
+    font-size: 28px;
+
+    &:focus, &:hover, &:active, &:visited {
+      outline: none;
+    }
+
+    &:hover {
+      color: #2569f1;
+    }
   }
 `;
