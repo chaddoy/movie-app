@@ -2,52 +2,77 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col, Button } from 'reactstrap';
 
-import { TitleContainer, Avatar, Title } from './style';
+import {
+  TitleContainer, Avatar, Title,
+  LoadingAvatar, LoadingTitle, LoadingSubtitle, LoadingButton
+} from './style';
 
 const propTypes = {
-  title: PropTypes.string.isRequired,
+  loading: PropTypes.bool,
   avatar: PropTypes.string,
+  title: PropTypes.string.isRequired,
 };
 
-export default function TitleSection({ avatar, title }) {
-  return (
-    <TitleContainer>
-      <Row>
-        <Col xs="12" sm="12" md="9" lg="10" className="no-padding">
-          <div className="display-table">
-            <div className="display-table-cell">
-              <Row>
-                <Col xs="auto">
-                  <Avatar src={avatar} alt={title} />
-                </Col>
-                <Col className="no-padding">
-                  <Title>
-                    <span>
-                      {title} <button>&#9733;</button>
-                    </span>
-                  </Title>
-                </Col>
-              </Row>
-            </div>
-          </div>
-        </Col>
+export default class index extends React.Component {
+  render() {
+    const { loading, avatar, title } = this.props;
 
-        <Col xs="12" sm="12" md="3" lg="2">
-          <Row className="btn-row">
-            <Col xs="4" sm="4" md="12" className="btn-col">
-              <Button className="action-btn" outline block color="primary">Play video</Button>
-            </Col>
-            <Col xs="4" sm="4" md="12" className="btn-col">
-              <Button className="action-btn" outline block color="primary">Watch later</Button>
-            </Col>
-            <Col xs="4" sm="4" md="12" className="btn-col">
-              <Button className="action-btn" outline block color="primary">Share</Button>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
-    </TitleContainer>
-  );
+    return (
+      <TitleContainer>
+        <Row>
+          <Col xs="12" sm="12" md="9" lg="10" className="no-padding">
+            <div className="display-table">
+              <div className="display-table-cell">
+                <Row>
+                  <Col xs="auto">
+                    {loading ? (
+                      <LoadingAvatar className="loading-gradient" />
+                    ) : (
+                      <Avatar src={avatar} alt={title} />
+                    )}
+                  </Col>
+                  <Col className="no-padding">
+                    <Title>
+                      <div className="vertical-aligned">
+                        {loading ? (
+                          <span>
+                            <LoadingTitle className="loading-gradient" />
+                            <LoadingSubtitle className="loading-gradient" />
+                          </span>
+                        ) : (
+                          <span>{title} <button>&#9733;</button></span>
+                        )}
+                      </div>
+                    </Title>
+                  </Col>
+                </Row>
+              </div>
+            </div>
+          </Col>
+
+          <Col xs="12" sm="12" md="3" lg="2">
+            <Row className="btn-row">
+              <Col xs="4" sm="4" md="12" className="btn-col">
+                {loading ? (<LoadingButton className="loading-gradient" />) : (
+                  <Button className="action-btn" outline block color="primary">Play video</Button>
+                )}
+              </Col>
+              <Col xs="4" sm="4" md="12" className="btn-col">
+                {loading ? (<LoadingButton className="loading-gradient" />) : (
+                  <Button className="action-btn" outline block color="primary">Watch later</Button>
+                )}
+              </Col>
+              <Col xs="4" sm="4" md="12" className="btn-col">
+                {loading ? (<LoadingButton className="loading-gradient" />) : (
+                  <Button className="action-btn" outline block color="primary">Share</Button>
+                )}
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </TitleContainer>
+    );
+  }
 }
 
-TitleSection.propTypes = propTypes;
+index.propTypes = propTypes;

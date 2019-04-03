@@ -4,9 +4,11 @@ import { Row, Col } from 'reactstrap';
 import { DEFAULT_PROPS } from '../../utils/constants';
 
 import { SynopsisContainer } from './style';
+import LoadingParagraph from '../LoadingParagraph';
 
 const propTypes = {
   synopsis: PropTypes.string.isRequired,
+  poster: PropTypes.string,
 };
 
 const defaultProps = {
@@ -23,7 +25,8 @@ export default function SynopsisSection({ synopsis, poster }) {
           md={{ size: 9, order: 1 }}
           className="synopsis"
         >
-          {synopsis}
+          <LoadingParagraph numberOfBars={30} />
+          {/* {synopsis} */}
         </Col>
         <Col
           xs={{ size: 12, order: 1 }}

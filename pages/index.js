@@ -12,15 +12,15 @@ export default function Index(props) {
   return (
     <Layout>
       <ContentSection bottomBorder padded>
-        <TitleSection {...MOVIE} />
+        <TitleSection {...MOVIE} loading />
       </ContentSection>
 
       <ContentSection title="Synopsis" padded>
-        <SynopsisSection {...MOVIE} />
+        <SynopsisSection {...MOVIE} loading />
       </ContentSection>
 
       <ContentSection title="Related videos" padded>
-        <RelatedSection {...MOVIE} />
+        <RelatedSection {...MOVIE} loading />
       </ContentSection>
     </Layout>
   );

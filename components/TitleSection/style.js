@@ -33,6 +33,7 @@ export const TitleContainer = styled(Container)`
 export const Avatar = styled.img`
   width: 80px;
   border-radius: 200px;
+  background-color: #d8e4fc;
 `;
 
 export const Title = styled.div`
@@ -40,7 +41,7 @@ export const Title = styled.div`
   height: 100%;
   display: table;
 
-  &> * {
+  .vertical-aligned {
     display: table-cell;
     font-size: 24px;
     font-weight: 600;
@@ -67,4 +68,34 @@ export const Title = styled.div`
       color: #2569f1;
     }
   }
+`;
+
+export const LoadingAvatar = styled.div`
+  width: 80px;
+  height: 80px;
+  background-color: #d8e4fc;
+  border-radius: 200px;
+`;
+
+export const LoadingTitle = styled.div`
+  width: 220px;
+  height: 40px;
+  background-color: #d8e4fc;
+  float: left;
+  margin-top: 5px;
+`;
+
+export const LoadingSubtitle = styled.div`
+  width: 170px;
+  height: 20px;
+  background-color: #d8e4fc;
+  float: left;
+  margin-top: 10px;
+  clear: both;
+`;
+
+export const LoadingButton = styled.div`
+  width: 100%;
+  height: 30px;
+  background-color: #d8e4fc;
 `;
