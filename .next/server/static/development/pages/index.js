@@ -716,21 +716,26 @@ var _jsxFileName = "/mnt/c/Users/CebuDev5/Projects/move-app/components/RelatedSe
 
 
 
-var propTypes = {};
-var defaultProps = {};
+var propTypes = {
+  relatedVideos: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.array.isRequired,
+  loading: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool.isRequired
+};
+var defaultProps = {
+  relatedVideos: []
+};
 function RelatedSection(_ref) {
   var relatedVideos = _ref.relatedVideos,
       loading = _ref.loading;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_style__WEBPACK_IMPORTED_MODULE_4__["RelatedContainer"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 19
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Row"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 20
     },
     __self: this
   }, relatedVideos.map(function (movie) {
@@ -744,14 +749,14 @@ function RelatedSection(_ref) {
       xl: "2",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 22
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_MovieCard__WEBPACK_IMPORTED_MODULE_5__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, movie, {
       loading: loading,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 27
       },
       __self: this
     })));
@@ -1794,14 +1799,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
 /* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
-/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../utils/constants */ "./utils/constants.js");
-/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout/index.js");
-/* harmony import */ var _components_ContentSection__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/ContentSection */ "./components/ContentSection/index.js");
-/* harmony import */ var _components_TitleSection__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/TitleSection */ "./components/TitleSection/index.js");
-/* harmony import */ var _components_SynopsisSection__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../components/SynopsisSection */ "./components/SynopsisSection/index.js");
-/* harmony import */ var _components_RelatedSection__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../components/RelatedSection */ "./components/RelatedSection/index.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! lodash */ "lodash");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../utils/constants */ "./utils/constants.js");
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout/index.js");
+/* harmony import */ var _components_ContentSection__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/ContentSection */ "./components/ContentSection/index.js");
+/* harmony import */ var _components_TitleSection__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../components/TitleSection */ "./components/TitleSection/index.js");
+/* harmony import */ var _components_SynopsisSection__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../components/SynopsisSection */ "./components/SynopsisSection/index.js");
+/* harmony import */ var _components_RelatedSection__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../components/RelatedSection */ "./components/RelatedSection/index.js");
 
 
 
@@ -1813,6 +1820,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "/mnt/c/Users/CebuDev5/Projects/move-app/pages/index.js";
+
+
 
 
 
@@ -1847,7 +1856,8 @@ function (_Component) {
         title: '',
         avatar: '',
         synopsis: '',
-        poster: ''
+        poster: '',
+        relatedVideos: _utils_constants__WEBPACK_IMPORTED_MODULE_14__["DEFAULT_PROPS"].relatedVideos
       }
     });
 
@@ -1859,14 +1869,17 @@ function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      var movieDetails = this.props.movieDetails;
+      var _this$props = this.props,
+          movieDetails = _this$props.movieDetails,
+          relatedVideos = _this$props.relatedVideos;
       setTimeout(function () {
         _this2.setState({
           movie: {
-            avatar: "".concat(_utils_constants__WEBPACK_IMPORTED_MODULE_13__["TMDB_IMG_BASE_URL"]).concat(movieDetails.backdrop_path),
+            avatar: "".concat(_utils_constants__WEBPACK_IMPORTED_MODULE_14__["TMDB_IMG_BASE_URL"]).concat(movieDetails.backdrop_path),
             title: movieDetails.title,
             synopsis: movieDetails.overview,
-            poster: "".concat(_utils_constants__WEBPACK_IMPORTED_MODULE_13__["TMDB_IMG_BASE_URL"]).concat(movieDetails.poster_path)
+            poster: "".concat(_utils_constants__WEBPACK_IMPORTED_MODULE_14__["TMDB_IMG_BASE_URL"]).concat(movieDetails.poster_path),
+            relatedVideos: relatedVideos
           },
           loading: false
         });
@@ -1878,55 +1891,55 @@ function (_Component) {
       var _this$state = this.state,
           loading = _this$state.loading,
           movie = _this$state.movie;
-      return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_14__["default"], {
+      return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_15__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 47
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ContentSection__WEBPACK_IMPORTED_MODULE_15__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ContentSection__WEBPACK_IMPORTED_MODULE_16__["default"], {
         bottomBorder: true,
-        padded: true,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 44
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_TitleSection__WEBPACK_IMPORTED_MODULE_16__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, movie, {
-        loading: loading,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 45
-        },
-        __self: this
-      }))), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ContentSection__WEBPACK_IMPORTED_MODULE_15__["default"], {
-        title: "Synopsis",
         padded: true,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 48
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_SynopsisSection__WEBPACK_IMPORTED_MODULE_17__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, movie, {
+      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_TitleSection__WEBPACK_IMPORTED_MODULE_17__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, movie, {
         loading: loading,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 49
         },
         __self: this
-      }))), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ContentSection__WEBPACK_IMPORTED_MODULE_15__["default"], {
-        title: "Related videos",
+      }))), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ContentSection__WEBPACK_IMPORTED_MODULE_16__["default"], {
+        title: "Synopsis",
         padded: true,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 52
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_RelatedSection__WEBPACK_IMPORTED_MODULE_18__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, _utils_constants__WEBPACK_IMPORTED_MODULE_13__["MOVIE"], {
-        loading: true,
+      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_SynopsisSection__WEBPACK_IMPORTED_MODULE_18__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, movie, {
+        loading: loading,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 53
+        },
+        __self: this
+      }))), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ContentSection__WEBPACK_IMPORTED_MODULE_16__["default"], {
+        title: "Related videos",
+        padded: true,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_RelatedSection__WEBPACK_IMPORTED_MODULE_19__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, movie, {
+        loading: loading,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 57
         },
         __self: this
       }))));
@@ -1941,27 +1954,46 @@ Index.getInitialProps =
 Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
 /*#__PURE__*/
 _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-  var res, data;
+  var movieRes, relatedRes, movieDetails, similarMovies, relatedVideos;
   return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
           _context.next = 2;
-          return isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11___default()("https://api.themoviedb.org/3/movie/399579?api_key=".concat(_utils_constants__WEBPACK_IMPORTED_MODULE_13__["TMDB_API_KEY"], "&language=en-US"));
+          return isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11___default()("https://api.themoviedb.org/3/movie/399579?api_key=".concat(_utils_constants__WEBPACK_IMPORTED_MODULE_14__["TMDB_API_KEY"], "&language=en-US"));
 
         case 2:
-          res = _context.sent;
+          movieRes = _context.sent;
           _context.next = 5;
-          return res.json();
+          return isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11___default()("https://api.themoviedb.org/3/movie/399579/similar?api_key=".concat(_utils_constants__WEBPACK_IMPORTED_MODULE_14__["TMDB_API_KEY"], "&language=en-US&page=1"));
 
         case 5:
-          data = _context.sent;
+          relatedRes = _context.sent;
+          _context.next = 8;
+          return movieRes.json();
+
+        case 8:
+          movieDetails = _context.sent;
+          _context.next = 11;
+          return relatedRes.json();
+
+        case 11:
+          similarMovies = _context.sent;
+          relatedVideos = lodash__WEBPACK_IMPORTED_MODULE_12___default.a.map(similarMovies.results, function (movie) {
+            return {
+              id: movie.id,
+              title: movie.title,
+              poster: "".concat(_utils_constants__WEBPACK_IMPORTED_MODULE_14__["TMDB_IMG_BASE_URL"]).concat(movie.poster_path)
+            };
+          });
+          console.log(relatedVideos);
           return _context.abrupt("return", {
             loading: false,
-            movieDetails: data
+            movieDetails: movieDetails,
+            relatedVideos: relatedVideos
           });
 
-        case 7:
+        case 15:
         case "end":
           return _context.stop();
       }
@@ -2029,7 +2061,25 @@ var MOVIE = {
   title: 'Alita: Battle Angel',
   avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/kevka/128.jpg',
   synopsis: 'Sequi consequatur et magni omnis porro tempore mollitia. Quasi deleniti voluptas et maiores aspernatur. Fuga adipisci quaerat esse consequuntur voluptatem nisi ut. Numquam consequatur enim alias nostrum. Reprehenderit aut explicabo dolor. Repellat omnis odit sapiente sit enim ab debitis molestiae. Fugiat et tenetur. Vel quo dolorum enim eaque. Eum adipisci qui et et tempore odit porro. Expedita aspernatur debitis. Qui dolores quo animi molestias dolor non esse. Consequuntur voluptatem sint veritatis repellendus praesentium eveniet et quibusdam. In magni et quis enim id et sunt iusto. Cum repudiandae sint aspernatur et deserunt a minima. Occaecati voluptate velit in minima officiis architecto voluptate architecto reprehenderit. Quod aut maiores praesentium voluptatem tempore consequatur animi necessitatibus.',
-  poster: 'http://lorempixel.com/480/640/nature/',
+  poster: 'http://lorempixel.com/480/640/nature/'
+};
+var DEFAULT_PROPS = {
+  avatar: 'https://robohash.org/sitsequiquia.png?size=300x300&set=set1',
+  poster: 'https://www.classicposters.com/images/nopicture.gif',
+  notFound: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_NotFound__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: undefined
+  }),
+  contentEmpty: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ContentEmpty__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: undefined
+  }),
   relatedVideos: [{
     id: 'b764a6bd-0967-4d25-8d38-b50cdbe1c5ba',
     title: 'Movie 1',
@@ -2055,24 +2105,6 @@ var MOVIE = {
     title: 'Movie 6',
     poster: 'http://lorempixel.com/480/640/nature/'
   }]
-};
-var DEFAULT_PROPS = {
-  avatar: 'https://robohash.org/sitsequiquia.png?size=300x300&set=set1',
-  poster: 'https://www.classicposters.com/images/nopicture.gif',
-  notFound: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_NotFound__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: undefined
-  }),
-  contentEmpty: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ContentEmpty__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: undefined
-  })
 };
 
 /***/ }),
@@ -2218,6 +2250,17 @@ module.exports = require("core-js/library/fn/symbol/iterator");
 /***/ (function(module, exports) {
 
 module.exports = require("isomorphic-unfetch");
+
+/***/ }),
+
+/***/ "lodash":
+/*!*************************!*\
+  !*** external "lodash" ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("lodash");
 
 /***/ }),
 

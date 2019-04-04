@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import fetch from 'isomorphic-unfetch';
+import _ from 'lodash';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { MOVIE, TMDB_API_KEY, TMDB_IMG_BASE_URL } from '../utils/constants';
+import { DEFAULT_PROPS } from '../utils/constants';
 
 import Layout from '../components/Layout';
 import ContentSection from '../components/ContentSection';
@@ -17,11 +19,12 @@ class Index extends Component {
       avatar: '',
       synopsis: '',
       poster: '',
+      relatedVideos: DEFAULT_PROPS.relatedVideos,
     },
   };
 
   componentDidMount() {
-    const { movieDetails } = this.props;
+    const { movieDetails, relatedVideos } = this.props;
 
     setTimeout(() => {
       this.setState({
@@ -30,6 +33,7 @@ class Index extends Component {
           title: movieDetails.title,
           synopsis: movieDetails.overview,
           poster: `${TMDB_IMG_BASE_URL}${movieDetails.poster_path}`,
+          relatedVideos,
         },
         loading: false,
       });
@@ -50,7 +54,7 @@ class Index extends Component {
         </ContentSection>
 
         <ContentSection title="Related videos" padded>
-          <RelatedSection {...MOVIE} loading />
+          <RelatedSection {...movie} loading={loading} />
         </ContentSection>
       </Layout>
     )
@@ -58,12 +62,23 @@ class Index extends Component {
 }
 
 Index.getInitialProps = async function () {
-  const res = await fetch(`https://api.themoviedb.org/3/movie/399579?api_key=${TMDB_API_KEY}&language=en-US`);
-  const data = await res.json();
+  const movieRes = await fetch(`https://api.themoviedb.org/3/movie/399579?api_key=${TMDB_API_KEY}&language=en-US`);
+  const relatedRes = await fetch(`https://api.themoviedb.org/3/movie/399579/similar?api_key=${TMDB_API_KEY}&language=en-US&page=1`);
+  const movieDetails = await movieRes.json();
+  const similarMovies = await relatedRes.json();
+
+  const relatedVideos = _.map(similarMovies.results, (movie) => ({
+    id: movie.id,
+    title: movie.title,
+    poster: `${TMDB_IMG_BASE_URL}${movie.poster_path}`,
+  }));
+
+  console.log(relatedVideos);
 
   return {
     loading: false,
-    movieDetails: data,
+    movieDetails,
+    relatedVideos,
   }
 }
 

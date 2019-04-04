@@ -5,9 +5,14 @@ import { Row, Col } from 'reactstrap';
 import { RelatedContainer } from './style';
 import MovieCard from '../MovieCard';
 
-const propTypes = {};
+const propTypes = {
+  relatedVideos: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired,
+};
 
-const defaultProps = {};
+const defaultProps = {
+  relatedVideos: [],
+};
 
 export default function RelatedSection({ relatedVideos, loading }) {
   return (
