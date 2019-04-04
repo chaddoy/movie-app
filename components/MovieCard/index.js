@@ -27,7 +27,7 @@ export default function MovieCard({ title, poster, loading }) {
         {loading ? (
           <LoadingCardTitle className="loading-gradient" />
         ) : (
-          <CardTitle>{title}</CardTitle>
+          <CardTitle className="title">{title}</CardTitle>
         )}
 
         {loading ? (

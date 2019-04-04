@@ -612,6 +612,7 @@ function MovieCard(_ref) {
     },
     __self: this
   }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardTitle"], {
+    className: "title",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 30
@@ -661,7 +662,7 @@ __webpack_require__.r(__webpack_exports__);
 var CardContainer = styled_components__WEBPACK_IMPORTED_MODULE_0___default()(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Card"]).withConfig({
   displayName: "style__CardContainer",
   componentId: "sc-170d2dk-0"
-})([".card-body{padding:10px;font-weight:500;font-size:12px;.watch-btn{font-weight:500;font-size:12px;}}"]);
+})([".card-body{padding:10px;font-weight:500;font-size:12px;.watch-btn{font-weight:500;font-size:12px;}}.title{height:36px;}"]);
 var LoadingCardTitle = styled_components__WEBPACK_IMPORTED_MODULE_0___default()(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardTitle"]).withConfig({
   displayName: "style__LoadingCardTitle",
   componentId: "sc-170d2dk-1"

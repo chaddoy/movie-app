@@ -12,6 +12,10 @@ export const CardContainer = styled(Card)`
       font-size: 12px;
     }
   }
+
+  .title {
+    height: 36px;
+  }
 `;
 
 export const LoadingCardTitle = styled(CardTitle)`
