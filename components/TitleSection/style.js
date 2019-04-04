@@ -48,25 +48,25 @@ export const Title = styled.div`
     vertical-align: middle;
     line-height: 1.3;
   }
+`;
 
-  button {
-    padding: 5px;
-    height: 32px;
-    line-height: 0;
-    padding-top: 0px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    color: #7ea6f6;
-    font-size: 28px;
+export const FaveButton = styled.button`
+  padding: 5px;
+  height: 32px;
+  line-height: 0;
+  padding-top: 0px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: ${props => props.faved ? '#e4d446' : '#7ea6f6'};
+  font-size: 28px;
 
-    &:focus, &:hover, &:active, &:visited {
-      outline: none;
-    }
+  &:focus, &:hover, &:active, &:visited {
+    outline: none;
+  }
 
-    &:hover {
-      color: #2569f1;
-    }
+  &:hover {
+    color: ${props => props.faved ? '#e4d446' : '#2569f1'};
   }
 `;
 

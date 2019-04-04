@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import fetch from 'isomorphic-unfetch';
 import _ from 'lodash';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { MOVIE, TMDB_API_KEY, TMDB_IMG_BASE_URL } from '../utils/constants';
+import { TMDB_API_KEY, TMDB_IMG_BASE_URL } from '../utils/constants';
 import { DEFAULT_PROPS } from '../utils/constants';
 
 import Layout from '../components/Layout';
@@ -21,6 +21,7 @@ class Index extends Component {
       synopsis: '',
       poster: '',
       relatedVideos: DEFAULT_PROPS.relatedVideos,
+      faved: false,
     },
   };
 
@@ -28,6 +29,12 @@ class Index extends Component {
     const { movieDetails, relatedVideos } = this.props;
 
     setTimeout(() => {
+      let faved = false;
+
+      if (localStorage.getItem('faved') === 'true') {
+        faved = true;
+      }
+
       this.setState({
         movie: {
           avatar: `${TMDB_IMG_BASE_URL}${movieDetails.backdrop_path}`,
@@ -35,10 +42,23 @@ class Index extends Component {
           synopsis: movieDetails.overview,
           poster: `${TMDB_IMG_BASE_URL}${movieDetails.poster_path}`,
           relatedVideos,
+          faved,
         },
         loading: false,
       });
     }, 3000);
+  }
+
+  onFavourite = () => {
+    const { movie } = this.state;
+
+    this.setState({
+      movie: {
+        ...movie,
+        faved: !movie.faved,
+      }
+    });
+    localStorage.setItem('faved', !movie.faved);
   }
 
   render() {
@@ -47,7 +67,7 @@ class Index extends Component {
     return (
       <Layout>
         <ContentSection bottomBorder padded>
-          <TitleSection {...movie} loading={loading} />
+          <TitleSection {...movie} loading={loading} onFavourite={this.onFavourite} />
         </ContentSection>
 
         <ContentSection padded style={{ paddingTop: 0, paddingBottom: 0 }}>

@@ -4,7 +4,7 @@ import { Row, Col, Button } from 'reactstrap';
 import { DEFAULT_PROPS } from '../../utils/constants';
 
 import {
-  TitleContainer, Avatar, Title,
+  TitleContainer, Avatar, Title, FaveButton,
   LoadingAvatar, LoadingTitle, LoadingSubtitle, LoadingButton
 } from './style';
 
@@ -20,7 +20,7 @@ const defaultProps = {
 
 export default class TitleSection extends React.Component {
   render() {
-    const { loading, avatar, title } = this.props;
+    const { loading, avatar, title, faved, onFavourite } = this.props;
 
     return (
       <TitleContainer>
@@ -45,7 +45,7 @@ export default class TitleSection extends React.Component {
                             <LoadingSubtitle className="loading-gradient" />
                           </span>
                         ) : (
-                          <span>{title} <button>&#9733;</button></span>
+                          <span>{title} <FaveButton onClick={onFavourite} faved={faved}>&#9733;</FaveButton></span>
                         )}
                       </div>
                     </Title>
