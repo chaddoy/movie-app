@@ -5,6 +5,7 @@ import { DEFAULT_PROPS } from '../../utils/constants';
 
 import { SynopsisContainer } from './style';
 import LoadingParagraph from '../LoadingParagraph';
+import LoadingImage from '../LoadingImage';
 
 const propTypes = {
   synopsis: PropTypes.string.isRequired,
@@ -15,7 +16,7 @@ const defaultProps = {
   poster: DEFAULT_PROPS.poster,
 };
 
-export default function SynopsisSection({ synopsis, poster }) {
+export default function SynopsisSection({ synopsis, poster, loading }) {
   return (
     <SynopsisContainer>
       <Row>
@@ -25,8 +26,9 @@ export default function SynopsisSection({ synopsis, poster }) {
           md={{ size: 9, order: 1 }}
           className="synopsis"
         >
-          <LoadingParagraph numberOfBars={30} />
-          {/* {synopsis} */}
+          {loading ? (
+            <LoadingParagraph numberOfBars={30} />
+          ) : synopsis}
         </Col>
         <Col
           xs={{ size: 12, order: 1 }}
@@ -34,7 +36,11 @@ export default function SynopsisSection({ synopsis, poster }) {
           md={{ size: 3, order: 2 }}
           className="poster"
         >
-          <img src={poster} alt="" style={{ width: '100%' }} />
+          {loading ? (
+            <LoadingImage />
+          ) : (
+            <img src={poster} alt="" style={{ width: '100%' }} />
+          )}
         </Col>
       </Row>
     </SynopsisContainer>

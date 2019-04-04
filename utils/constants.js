@@ -26,6 +26,10 @@ export const MOVIE = {
     id: '0e0489d9-5a5a-4388-8c05-7d5289270c1d',
     title: 'Movie 5',
     poster: 'http://lorempixel.com/480/640/nature/',
+  }, {
+    id: 'c0c9728b-d57b-4d25-a97a-256d66ac8190',
+    title: 'Movie 6',
+    poster: 'http://lorempixel.com/480/640/nature/',
   }],
 };
 

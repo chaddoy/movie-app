@@ -9,15 +9,19 @@ const propTypes = {};
 
 const defaultProps = {};
 
-export default function RelatedSection({ relatedVideos }) {
+export default function RelatedSection({ relatedVideos, loading }) {
   return (
     <RelatedContainer>
       <Row>
         {relatedVideos.map(movie => (
-          <Col key={movie.id} className="moviecard-col">
+          <Col
+            key={movie.id}
+            className="moviecard-col"
+            xs="6" sm="6" md="4" lg="2" xl="2"
+          >
             <MovieCard
               {...movie}
-              xs="3"
+              loading={loading}
             />
           </Col>
         ))}

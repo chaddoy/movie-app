@@ -3,7 +3,8 @@ import { Container } from 'reactstrap';
 
 export const RelatedContainer = styled(Container)`
   .moviecard-col {
-    padding: 0px 5px;
+    padding: 5px 5px;
+    padding-left: 0px;
 
     &:first-child {
       padding-left: 0px;
@@ -11,6 +12,10 @@ export const RelatedContainer = styled(Container)`
 
     &:last-child {
       padding-right: 0px;
+
+      &.col-6 {
+        padding-right: 5px;
+      }
     }
   }
 `;

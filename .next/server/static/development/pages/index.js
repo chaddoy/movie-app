@@ -347,6 +347,62 @@ Layout.defaultProps = defaultProps;
 
 /***/ }),
 
+/***/ "./components/LoadingImage/index.js":
+/*!******************************************!*\
+  !*** ./components/LoadingImage/index.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return LoadingImage; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style */ "./components/LoadingImage/style.js");
+var _jsxFileName = "/mnt/c/Users/CebuDev5/Projects/move-app/components/LoadingImage/index.js";
+
+
+
+var propTypes = {};
+var defaultProps = {};
+function LoadingImage(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_style__WEBPACK_IMPORTED_MODULE_2__["Image"], {
+    className: "loading-gradient",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  });
+}
+LoadingImage.propTypes = propTypes;
+LoadingImage.defaultProps = defaultProps;
+
+/***/ }),
+
+/***/ "./components/LoadingImage/style.js":
+/*!******************************************!*\
+  !*** ./components/LoadingImage/style.js ***!
+  \******************************************/
+/*! exports provided: Image */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Image", function() { return Image; });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+
+var Image = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
+  displayName: "style__Image",
+  componentId: "njndhd-0"
+})(["min-height:250px;background-color:#d8e4fc;"]);
+
+/***/ }),
+
 /***/ "./components/LoadingParagraph/index.js":
 /*!**********************************************!*\
   !*** ./components/LoadingParagraph/index.js ***!
@@ -497,7 +553,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "reactstrap");
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style */ "./components/MovieCard/style.js");
+/* harmony import */ var _LoadingImage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../LoadingImage */ "./components/LoadingImage/index.js");
 var _jsxFileName = "/mnt/c/Users/CebuDev5/Projects/move-app/components/MovieCard/index.js";
+
 
 
 
@@ -506,42 +564,64 @@ var propTypes = {};
 var defaultProps = {};
 function MovieCard(_ref) {
   var title = _ref.title,
-      poster = _ref.poster;
+      poster = _ref.poster,
+      loading = _ref.loading;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_style__WEBPACK_IMPORTED_MODULE_3__["CardContainer"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 14
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardImg"], {
+  }, loading ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LoadingImage__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: "loading-gradient",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardImg"], {
     top: true,
     width: "100%",
     src: poster,
     alt: title,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 18
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardBody"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 20
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardTitle"], {
+  }, loading ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_style__WEBPACK_IMPORTED_MODULE_3__["LoadingCardTitle"], {
+    className: "loading-gradient",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 22
     },
     __self: this
-  }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+  }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardTitle"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: this
+  }, title), loading ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_style__WEBPACK_IMPORTED_MODULE_3__["LoadingCardButton"], {
+    className: "loading-gradient",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: this
+  }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
     block: true,
     color: "primary",
     className: "watch-btn",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 30
     },
     __self: this
   }, "Watch")));
@@ -555,12 +635,14 @@ MovieCard.defaultProps = defaultProps;
 /*!***************************************!*\
   !*** ./components/MovieCard/style.js ***!
   \***************************************/
-/*! exports provided: CardContainer */
+/*! exports provided: CardContainer, LoadingCardTitle, LoadingCardButton */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CardContainer", function() { return CardContainer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoadingCardTitle", function() { return LoadingCardTitle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoadingCardButton", function() { return LoadingCardButton; });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "reactstrap");
@@ -571,6 +653,14 @@ var CardContainer = styled_components__WEBPACK_IMPORTED_MODULE_0___default()(rea
   displayName: "style__CardContainer",
   componentId: "sc-170d2dk-0"
 })([".card-body{padding:10px;font-weight:500;font-size:12px;.watch-btn{font-weight:500;font-size:12px;}}"]);
+var LoadingCardTitle = styled_components__WEBPACK_IMPORTED_MODULE_0___default()(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardTitle"]).withConfig({
+  displayName: "style__LoadingCardTitle",
+  componentId: "sc-170d2dk-1"
+})(["width:100px;height:20px;background-color:#d8e4fc;"]);
+var LoadingCardButton = styled_components__WEBPACK_IMPORTED_MODULE_0___default()(reactstrap__WEBPACK_IMPORTED_MODULE_1__["CardTitle"]).withConfig({
+  displayName: "style__LoadingCardButton",
+  componentId: "sc-170d2dk-2"
+})(["height:30px;background-color:#d8e4fc;"]);
 
 /***/ }),
 
@@ -629,7 +719,8 @@ var _jsxFileName = "/mnt/c/Users/CebuDev5/Projects/move-app/components/RelatedSe
 var propTypes = {};
 var defaultProps = {};
 function RelatedSection(_ref) {
-  var relatedVideos = _ref.relatedVideos;
+  var relatedVideos = _ref.relatedVideos,
+      loading = _ref.loading;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_style__WEBPACK_IMPORTED_MODULE_4__["RelatedContainer"], {
     __source: {
       fileName: _jsxFileName,
@@ -646,16 +737,21 @@ function RelatedSection(_ref) {
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
       key: movie.id,
       className: "moviecard-col",
+      xs: "6",
+      sm: "6",
+      md: "4",
+      lg: "2",
+      xl: "2",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 17
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_MovieCard__WEBPACK_IMPORTED_MODULE_5__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, movie, {
-      xs: "3",
+      loading: loading,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 22
       },
       __self: this
     })));
@@ -685,7 +781,7 @@ __webpack_require__.r(__webpack_exports__);
 var RelatedContainer = styled_components__WEBPACK_IMPORTED_MODULE_0___default()(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Container"]).withConfig({
   displayName: "style__RelatedContainer",
   componentId: "sc-9ay2km-0"
-})([".moviecard-col{padding:0px 5px;&:first-child{padding-left:0px;}&:last-child{padding-right:0px;}}"]);
+})([".moviecard-col{padding:5px 5px;padding-left:0px;&:first-child{padding-left:0px;}&:last-child{padding-right:0px;&.col-6{padding-right:5px;}}}"]);
 
 /***/ }),
 
@@ -708,7 +804,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/constants */ "./utils/constants.js");
 /* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style */ "./components/SynopsisSection/style.js");
 /* harmony import */ var _LoadingParagraph__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../LoadingParagraph */ "./components/LoadingParagraph/index.js");
+/* harmony import */ var _LoadingImage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../LoadingImage */ "./components/LoadingImage/index.js");
 var _jsxFileName = "/mnt/c/Users/CebuDev5/Projects/move-app/components/SynopsisSection/index.js";
+
 
 
 
@@ -724,17 +822,18 @@ var defaultProps = {
 };
 function SynopsisSection(_ref) {
   var synopsis = _ref.synopsis,
-      poster = _ref.poster;
+      poster = _ref.poster,
+      loading = _ref.loading;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_style__WEBPACK_IMPORTED_MODULE_4__["SynopsisContainer"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 21
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 22
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
@@ -753,17 +852,17 @@ function SynopsisSection(_ref) {
     className: "synopsis",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 23
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LoadingParagraph__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, loading ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LoadingParagraph__WEBPACK_IMPORTED_MODULE_5__["default"], {
     numberOfBars: 30,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 30
     },
     __self: this
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+  }) : synopsis), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
     xs: {
       size: 12,
       order: 1
@@ -779,10 +878,16 @@ function SynopsisSection(_ref) {
     className: "poster",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 33
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }, loading ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LoadingImage__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40
+    },
+    __self: this
+  }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: poster,
     alt: "",
     style: {
@@ -790,7 +895,7 @@ function SynopsisSection(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 42
     },
     __self: this
   }))));
@@ -1746,6 +1851,10 @@ var MOVIE = {
     id: '0e0489d9-5a5a-4388-8c05-7d5289270c1d',
     title: 'Movie 5',
     poster: 'http://lorempixel.com/480/640/nature/'
+  }, {
+    id: 'c0c9728b-d57b-4d25-a97a-256d66ac8190',
+    title: 'Movie 6',
+    poster: 'http://lorempixel.com/480/640/nature/'
   }]
 };
 var DEFAULT_PROPS = {
@@ -1753,14 +1862,14 @@ var DEFAULT_PROPS = {
   notFound: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_NotFound__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 38
     },
     __self: undefined
   }),
   contentEmpty: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ContentEmpty__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 39
     },
     __self: undefined
   })
