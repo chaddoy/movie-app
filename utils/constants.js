@@ -1,6 +1,9 @@
 import NotFound from '../components/NotFound';
 import ContentEmpty from '../components/ContentEmpty';
 
+export const TMDB_API_KEY = '40effc549be18fce58bf8db1c1a0951f';
+export const TMDB_IMG_BASE_URL = 'http://image.tmdb.org/t/p/w185';
+
 export const MOVIE = {
   title: 'Alita: Battle Angel',
   avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/kevka/128.jpg',
@@ -34,6 +37,7 @@ export const MOVIE = {
 };
 
 export const DEFAULT_PROPS = {
+  avatar: 'https://robohash.org/sitsequiquia.png?size=300x300&set=set1',
   poster: 'https://www.classicposters.com/images/nopicture.gif',
   notFound: <NotFound />,
   contentEmpty: <ContentEmpty />,

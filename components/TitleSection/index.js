@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col, Button } from 'reactstrap';
+import { DEFAULT_PROPS } from '../../utils/constants';
 
 import {
   TitleContainer, Avatar, Title,
@@ -13,7 +14,11 @@ const propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-export default class index extends React.Component {
+const defaultProps = {
+  avatar: DEFAULT_PROPS.avatar,
+};
+
+export default class TitleSection extends React.Component {
   render() {
     const { loading, avatar, title } = this.props;
 
@@ -75,4 +80,5 @@ export default class index extends React.Component {
   }
 }
 
-index.propTypes = propTypes;
+TitleSection.propTypes = propTypes;
+TitleSection.defaultProps = defaultProps;
