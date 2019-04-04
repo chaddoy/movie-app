@@ -1,13 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, CardImg, CardBody, CardTitle, Button } from 'reactstrap';
+import { CardImg, CardBody, CardTitle, Button } from 'reactstrap';
+import { DEFAULT_PROPS } from '../../utils/constants';
 
 import { CardContainer, LoadingCardTitle, LoadingCardButton } from './style';
 import LoadingImage from '../LoadingImage';
 
-const propTypes = {};
+const propTypes = {
+  title: PropTypes.string.isRequired,
+  poster: PropTypes.string.isRequired,
+};
 
-const defaultProps = {};
+const defaultProps = {
+  poster: DEFAULT_PROPS.notFoundImg,
+};
 
 export default function MovieCard({ title, poster, loading }) {
   return (

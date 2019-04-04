@@ -8,6 +8,7 @@ import { DEFAULT_PROPS } from '../utils/constants';
 import Layout from '../components/Layout';
 import ContentSection from '../components/ContentSection';
 import TitleSection from '../components/TitleSection';
+import SearchSection from '../components/SearchSection';
 import SynopsisSection from '../components/SynopsisSection';
 import RelatedSection from '../components/RelatedSection';
 
@@ -49,6 +50,10 @@ class Index extends Component {
           <TitleSection {...movie} loading={loading} />
         </ContentSection>
 
+        <ContentSection padded style={{ paddingTop: 0, paddingBottom: 0 }}>
+          <SearchSection />
+        </ContentSection>
+
         <ContentSection title="Synopsis" padded>
           <SynopsisSection {...movie} loading={loading} />
         </ContentSection>
@@ -72,8 +77,6 @@ Index.getInitialProps = async function () {
     title: movie.title,
     poster: `${TMDB_IMG_BASE_URL}${movie.poster_path}`,
   }));
-
-  console.log(relatedVideos);
 
   return {
     loading: false,

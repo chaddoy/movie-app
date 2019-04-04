@@ -160,7 +160,8 @@ function ContentSection(_ref) {
   var title = _ref.title,
       children = _ref.children,
       bottomBorder = _ref.bottomBorder,
-      padded = _ref.padded;
+      padded = _ref.padded,
+      style = _ref.style;
   var sectionTitle = title ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
     __source: {
       fileName: _jsxFileName,
@@ -177,6 +178,7 @@ function ContentSection(_ref) {
   }) : null;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_style__WEBPACK_IMPORTED_MODULE_3__["Content"], {
     padded: padded,
+    style: style,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 21
@@ -552,31 +554,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "reactstrap");
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style */ "./components/MovieCard/style.js");
-/* harmony import */ var _LoadingImage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../LoadingImage */ "./components/LoadingImage/index.js");
+/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/constants */ "./utils/constants.js");
+/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style */ "./components/MovieCard/style.js");
+/* harmony import */ var _LoadingImage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../LoadingImage */ "./components/LoadingImage/index.js");
 var _jsxFileName = "/mnt/c/Users/CebuDev5/Projects/move-app/components/MovieCard/index.js";
 
 
 
 
 
-var propTypes = {};
-var defaultProps = {};
+
+var propTypes = {
+  title: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  poster: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
+};
+var defaultProps = {
+  poster: _utils_constants__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_PROPS"].notFoundImg
+};
 function MovieCard(_ref) {
   var title = _ref.title,
       poster = _ref.poster,
       loading = _ref.loading;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_style__WEBPACK_IMPORTED_MODULE_3__["CardContainer"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_style__WEBPACK_IMPORTED_MODULE_4__["CardContainer"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 20
     },
     __self: this
-  }, loading ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LoadingImage__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, loading ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LoadingImage__WEBPACK_IMPORTED_MODULE_5__["default"], {
     className: "loading-gradient",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 22
     },
     __self: this
   }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardImg"], {
@@ -586,33 +595,33 @@ function MovieCard(_ref) {
     alt: title,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 24
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardBody"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 26
     },
     __self: this
-  }, loading ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_style__WEBPACK_IMPORTED_MODULE_3__["LoadingCardTitle"], {
+  }, loading ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_style__WEBPACK_IMPORTED_MODULE_4__["LoadingCardTitle"], {
     className: "loading-gradient",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 28
     },
     __self: this
   }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardTitle"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 30
     },
     __self: this
-  }, title), loading ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_style__WEBPACK_IMPORTED_MODULE_3__["LoadingCardButton"], {
+  }, title), loading ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_style__WEBPACK_IMPORTED_MODULE_4__["LoadingCardButton"], {
     className: "loading-gradient",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 34
     },
     __self: this
   }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -621,7 +630,7 @@ function MovieCard(_ref) {
     className: "watch-btn",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 36
     },
     __self: this
   }, "Watch")));
@@ -790,6 +799,109 @@ var RelatedContainer = styled_components__WEBPACK_IMPORTED_MODULE_0___default()(
 
 /***/ }),
 
+/***/ "./components/SearchSection/index.js":
+/*!*******************************************!*\
+  !*** ./components/SearchSection/index.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SearchSection; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "reactstrap");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style */ "./components/SearchSection/style.js");
+var _jsxFileName = "/mnt/c/Users/CebuDev5/Projects/move-app/components/SearchSection/index.js";
+
+
+
+function SearchSection() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_style__WEBPACK_IMPORTED_MODULE_2__["SearchContainer"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+    xs: "3",
+    sm: "3",
+    md: "8",
+    className: "no-padding",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    color: "primary",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  }, "\u2039"), " Back")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+    xs: "9",
+    sm: "9",
+    md: "4",
+    className: "no-padding",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+    type: "email",
+    name: "email",
+    id: "exampleEmail",
+    placeholder: "Search for a movie",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: this
+  }))));
+}
+
+/***/ }),
+
+/***/ "./components/SearchSection/style.js":
+/*!*******************************************!*\
+  !*** ./components/SearchSection/style.js ***!
+  \*******************************************/
+/*! exports provided: SearchContainer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearchContainer", function() { return SearchContainer; });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "reactstrap");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var SearchContainer = styled_components__WEBPACK_IMPORTED_MODULE_0___default()(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Container"]).withConfig({
+  displayName: "style__SearchContainer",
+  componentId: "sc-1v165rw-0"
+})(["button{font-size:13px;padding:5px;line-height:0.8;width:64px;margin-top:6px;span{font-size:24px;line-height:0.1;font-weight:bold;}}"]);
+
+/***/ }),
+
 /***/ "./components/SynopsisSection/index.js":
 /*!*********************************************!*\
   !*** ./components/SynopsisSection/index.js ***!
@@ -820,10 +932,11 @@ var _jsxFileName = "/mnt/c/Users/CebuDev5/Projects/move-app/components/SynopsisS
 
 var propTypes = {
   synopsis: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
-  poster: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+  poster: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  loading: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool.isRequired
 };
 var defaultProps = {
-  poster: _utils_constants__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_PROPS"].poster
+  poster: _utils_constants__WEBPACK_IMPORTED_MODULE_3__["DEFAULT_PROPS"].notFoundImg
 };
 function SynopsisSection(_ref) {
   var synopsis = _ref.synopsis,
@@ -832,13 +945,13 @@ function SynopsisSection(_ref) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_style__WEBPACK_IMPORTED_MODULE_4__["SynopsisContainer"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 22
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 23
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
@@ -857,14 +970,14 @@ function SynopsisSection(_ref) {
     className: "synopsis",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 24
     },
     __self: this
   }, loading ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LoadingParagraph__WEBPACK_IMPORTED_MODULE_5__["default"], {
     numberOfBars: 30,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 31
     },
     __self: this
   }) : synopsis), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
@@ -883,13 +996,13 @@ function SynopsisSection(_ref) {
     className: "poster",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 34
     },
     __self: this
   }, loading ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LoadingImage__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 41
     },
     __self: this
   }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -900,7 +1013,7 @@ function SynopsisSection(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 43
     },
     __self: this
   }))));
@@ -1807,8 +1920,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout/index.js");
 /* harmony import */ var _components_ContentSection__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/ContentSection */ "./components/ContentSection/index.js");
 /* harmony import */ var _components_TitleSection__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../components/TitleSection */ "./components/TitleSection/index.js");
-/* harmony import */ var _components_SynopsisSection__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../components/SynopsisSection */ "./components/SynopsisSection/index.js");
-/* harmony import */ var _components_RelatedSection__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../components/RelatedSection */ "./components/RelatedSection/index.js");
+/* harmony import */ var _components_SearchSection__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../components/SearchSection */ "./components/SearchSection/index.js");
+/* harmony import */ var _components_SynopsisSection__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../components/SynopsisSection */ "./components/SynopsisSection/index.js");
+/* harmony import */ var _components_RelatedSection__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../components/RelatedSection */ "./components/RelatedSection/index.js");
 
 
 
@@ -1820,6 +1934,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "/mnt/c/Users/CebuDev5/Projects/move-app/pages/index.js";
+
 
 
 
@@ -1894,7 +2009,7 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_15__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 48
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ContentSection__WEBPACK_IMPORTED_MODULE_16__["default"], {
@@ -1902,29 +2017,46 @@ function (_Component) {
         padded: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 49
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_TitleSection__WEBPACK_IMPORTED_MODULE_17__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, movie, {
         loading: loading,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 50
         },
         __self: this
       }))), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ContentSection__WEBPACK_IMPORTED_MODULE_16__["default"], {
+        padded: true,
+        style: {
+          paddingTop: 0,
+          paddingBottom: 0
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 53
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_SearchSection__WEBPACK_IMPORTED_MODULE_18__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ContentSection__WEBPACK_IMPORTED_MODULE_16__["default"], {
         title: "Synopsis",
         padded: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 57
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_SynopsisSection__WEBPACK_IMPORTED_MODULE_18__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, movie, {
+      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_SynopsisSection__WEBPACK_IMPORTED_MODULE_19__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, movie, {
         loading: loading,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 58
         },
         __self: this
       }))), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_ContentSection__WEBPACK_IMPORTED_MODULE_16__["default"], {
@@ -1932,14 +2064,14 @@ function (_Component) {
         padded: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 61
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_RelatedSection__WEBPACK_IMPORTED_MODULE_19__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, movie, {
+      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_components_RelatedSection__WEBPACK_IMPORTED_MODULE_20__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, movie, {
         loading: loading,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 62
         },
         __self: this
       }))));
@@ -1986,14 +2118,13 @@ _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(f
               poster: "".concat(_utils_constants__WEBPACK_IMPORTED_MODULE_14__["TMDB_IMG_BASE_URL"]).concat(movie.poster_path)
             };
           });
-          console.log(relatedVideos);
           return _context.abrupt("return", {
             loading: false,
             movieDetails: movieDetails,
             relatedVideos: relatedVideos
           });
 
-        case 15:
+        case 14:
         case "end":
           return _context.stop();
       }
@@ -2065,46 +2196,46 @@ var MOVIE = {
 };
 var DEFAULT_PROPS = {
   avatar: 'https://robohash.org/sitsequiquia.png?size=300x300&set=set1',
-  poster: 'https://www.classicposters.com/images/nopicture.gif',
+  relatedVideos: [{
+    id: 1,
+    title: '',
+    poster: ''
+  }, {
+    id: 2,
+    title: '',
+    poster: ''
+  }, {
+    id: 3,
+    title: '',
+    poster: ''
+  }, {
+    id: 4,
+    title: '',
+    poster: ''
+  }, {
+    id: 5,
+    title: '',
+    poster: ''
+  }, {
+    id: 6,
+    title: '',
+    poster: ''
+  }],
   notFound: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_NotFound__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 24
     },
     __self: undefined
   }),
+  notFoundImg: '/static/notfound-img.png',
   contentEmpty: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ContentEmpty__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 26
     },
     __self: undefined
-  }),
-  relatedVideos: [{
-    id: 'b764a6bd-0967-4d25-8d38-b50cdbe1c5ba',
-    title: 'Movie 1',
-    poster: 'http://lorempixel.com/480/640/nature/'
-  }, {
-    id: 'a1b08947-c76e-41d3-974b-27f996aeeb34',
-    title: 'Movie 2',
-    poster: 'http://lorempixel.com/480/640/nature/'
-  }, {
-    id: 'a0c8085f-b817-497b-92a6-b92da1189feb',
-    title: 'Movie 3',
-    poster: 'http://lorempixel.com/480/640/nature/'
-  }, {
-    id: 'f4d76865-8ae1-4ca8-bd76-f8367e57f77d',
-    title: 'Movie 4',
-    poster: 'http://lorempixel.com/480/640/nature/'
-  }, {
-    id: '0e0489d9-5a5a-4388-8c05-7d5289270c1d',
-    title: 'Movie 5',
-    poster: 'http://lorempixel.com/480/640/nature/'
-  }, {
-    id: 'c0c9728b-d57b-4d25-a97a-256d66ac8190',
-    title: 'Movie 6',
-    poster: 'http://lorempixel.com/480/640/nature/'
-  }]
+  })
 };
 
 /***/ }),

@@ -10,10 +10,11 @@ import LoadingImage from '../LoadingImage';
 const propTypes = {
   synopsis: PropTypes.string.isRequired,
   poster: PropTypes.string,
+  loading: PropTypes.bool.isRequired,
 };
 
 const defaultProps = {
-  poster: DEFAULT_PROPS.poster,
+  poster: DEFAULT_PROPS.notFoundImg,
 };
 
 export default function SynopsisSection({ synopsis, poster, loading }) {
